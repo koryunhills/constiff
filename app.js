@@ -21,7 +21,7 @@
     hy: {
       title: 'Սահմանադրություն․ գործող → նախագիծ',
       unified: 'Միասնական', split: 'Կողք կողքի', collapseAll: 'Ծալել բոլորը', expandAll: 'Բացել բոլորը',
-      filterPh: 'Զտել ըստ համարի կամ տեքստի…', loading: 'Բեռնվում է…',
+      filterPh: 'Որոնել…', loading: 'Բեռնվում է…',
       M: 'Փոփոխված', A: 'Նոր', D: 'Հանված', U: 'Անփոփոխ',
       article: 'Հոդված', preamble: 'Նախաբան', chapter: 'Գլուխ', fromArt: 'գործող՝ հոդվ.', current: 'գործող',
       viewed: 'Դիտված', unchangedLines: (n) => `${n} անփոփոխ տող`, noChanges: 'Տեքստը չի փոխվել։',
@@ -30,9 +30,9 @@
       filterLabel: 'Զտել հոդվածները', treeLabel: 'Հոդվածներ', viewGroup: 'Դիտման ձև',
       toggleArticle: 'Ծալել կամ բացել հոդվածը', showFold: 'Ցույց տալ',
       themeLight: 'Լուսավոր թեմա', themeDark: 'Մուգ թեմա', langName: 'English',
-      ovEyebrow: 'Բովանդակություն', ovTitle: 'Որտեղ են հիմնական փոփոխությունները',
-      ovIntro: 'Նախագիծն ունի նախաբան և 12 գլուխ։ Յուրաքանչյուր գլխի տակ նշված են նրա հիմնական փոփոխությունները։ Սեղմեք փոփոխության վրա՝ բացատրությունը կարդալու և համեմատությունը բացելու համար։ Ամփոփումը constiff-ի հեղինակներինն է, ոչ թե պաշտոնական։',
-      arts: (n) => `${n} հոդված`, noMain: 'հիմնական փոփոխություն չկա', alsoHere: 'նաև այստեղ՝',
+      ovEyebrow: 'Ամփոփում', ovTitle: 'Հիմնական փոփոխությունները', artShort: 'հոդվ.', ovBack: 'Բոլոր փոփոխությունները',
+      ovIntro: 'Սեղմեք փոփոխության վրա՝ բացատրության և համեմատության համար։ Ամփոփումը constiff-ի հեղինակներինն է, ոչ պաշտոնական։',
+      arts: (n) => `${n} հոդված`,
       keepInMind: 'Նկատի ունեցեք', readDiff: 'Տեսնել համեմատությունը', draftArt: 'Նախագիծ՝ հոդվ.', currentArts: 'գործող՝ հոդվ.', newArt: 'նոր հոդված',
       legend: '~ = համապատասխանեցված է ընդհանուր նմանությամբ, ոչ մի պարբերության ձևակերպումը չի պահպանվել, * = ձեռքով համապատասխանեցում, (մաս) = այստեղ է անցել հոդվածի միայն մի մասը',
       partMark: '(մաս)',
@@ -46,7 +46,7 @@
       footer: 'Անկախ, ոչ պաշտոնական գործիք։ Տեքստերը վերցված են yourconstitution.am-ից։ Կարմիրը գործող տեքստն է, կանաչը՝ նախագծինը։ Կարմիր և կանաչ տողերը կողք կողքի են միայն այն դեպքում, երբ դրանք նույն դրույթն են (ընդհանուր ձևակերպմամբ). միավորված կամ բաժանված պարբերությունները ցուցադրվում են միասին՝ վերևում բացատրող տողով։ Հոդվածի համարի կողքին «~»՝ համապատասխանեցված է միայն ընդհանուր նմանությամբ, «*»՝ ձեռքով համապատասխանեցում, «(մաս)»՝ այստեղ է անցել հոդվածի միայն մի մասը։ Համապատասխանեցումը կարելի է ուղղել <code>data/mapping.json</code> ֆայլով։ Diff-ը՝ <a href="https://github.com/kpdecker/jsdiff" target="_blank" rel="noopener">jsdiff</a>։',
       loadError: 'Չհաջողվեց բեռնել data/constitution.json։ Գործարկեք <code>node scripts/fetch-data.mjs</code>։',
       grpCaption: (o, n) => (n === 1 ? `Գործող ${o} պարբերություն միավորվել է նախագծի մեկ պարբերությունում` : o === 1 ? `Գործող մեկ պարբերությունը բաժանվել է նախագծի ${n} պարբերության` : `Գործող ${o} պարբերությունը վերախմբավորվել է նախագծի ${n} պարբերությունում`),
-      aiBtn: 'AI վերլուծություն', aiClose: 'Փակել', aiChanges: 'Ինչ է փոխվում', aiNotes: 'Նշումներ',
+      aiBtn: 'AI վերլուծություն', aiClose: 'Փակել', sbHide: 'Թաքցնել կողագոտին', sbShow: 'Ցուցադրել կողագոտին', aiChanges: 'Ինչ է փոխվում', aiNotes: 'Նշումներ',
       aiLoading: 'Վերլուծությունը բեռնվում է…',
       aiMissing: 'Այս հոդվածի համար վերլուծություն դեռ չկա։',
       aiError: 'Չհաջողվեց բեռնել վերլուծությունը։ Փորձեք կրկին։',
@@ -57,7 +57,7 @@
     en: {
       title: 'Constitution: current → draft',
       unified: 'Unified', split: 'Split', collapseAll: 'Collapse all', expandAll: 'Expand all',
-      filterPh: 'Filter by number or text…', loading: 'Loading…',
+      filterPh: 'Search…', loading: 'Loading…',
       M: 'Modified', A: 'Added', D: 'Removed', U: 'Unchanged',
       article: 'Article', preamble: 'Preamble', chapter: 'Chapter', fromArt: 'current art.', current: 'current',
       viewed: 'Viewed', unchangedLines: (n) => `${n} unchanged ${new Intl.PluralRules('en').select(n) === 'one' ? 'line' : 'lines'}`, noChanges: 'Text unchanged.',
@@ -66,10 +66,10 @@
       filterLabel: 'Filter articles', treeLabel: 'Articles', viewGroup: 'View',
       toggleArticle: 'Collapse or expand article', showFold: 'Show',
       themeLight: 'Light theme', themeDark: 'Dark theme', langName: 'Հայերեն',
-      ovEyebrow: 'Contents', ovTitle: 'Where the main changes are',
+      ovEyebrow: 'Overview', ovTitle: 'The main changes', artShort: 'art.', ovBack: 'All changes',
       chapterNames: ['Fundamental provisions', 'Fundamental rights, freedoms and duties', 'Parties and mass media', 'Legislative power', 'President of the Republic', 'Executive power', 'Judicial power', 'Prosecution and investigative bodies', 'Local self-government', 'Independent and autonomous state bodies, Human Rights Commissioner', 'Adoption and amendment of the Constitution, referendum', 'Final and transitional provisions'],
-      ovIntro: 'The draft has a preamble and 12 chapters. Under each chapter are the main changes it contains. Click a change to read what it means and open the diff. This summary is by the constiff authors, not an official one.',
-      arts: (n) => `${n} ${n === 1 ? 'article' : 'articles'}`, noMain: 'no main change', alsoHere: 'also here:',
+      ovIntro: 'Open a change for the explanation and the diff. Summary by the constiff authors, not official.',
+      arts: (n) => `${n} ${n === 1 ? 'article' : 'articles'}`,
       keepInMind: 'Keep in mind', readDiff: 'Read the diff', draftArt: 'Draft art.', currentArts: 'current art.', newArt: 'new article',
       legend: '~ = matched by overall similarity only; none of its paragraphs’ wording carried over, * = matched by hand, (part) = only some of its paragraphs moved here',
       partMark: '(part)',
@@ -83,7 +83,7 @@
       footer: 'Independent, unofficial tool. Texts come from yourconstitution.am. Red is the current text, green the draft. A red line sits beside a green one only when both are the same provision (they share its wording); paragraphs that were merged or split are shown together under a caption that says so. In “current art.” lists, “~” means matched by overall similarity only, “*” means a hand-made match, and “(part)” means only some of the old article’s paragraphs moved there. Matching can be corrected in <code>data/mapping.json</code>. Diffing by <a href="https://github.com/kpdecker/jsdiff" target="_blank" rel="noopener">jsdiff</a>.',
       loadError: 'Could not load data/constitution.json. Run <code>node scripts/fetch-data.mjs</code>.',
       grpCaption: (o, n) => (n === 1 ? `${o} current paragraphs merged into one draft paragraph` : o === 1 ? `One current paragraph split into ${n} draft paragraphs` : `${o} current paragraphs regrouped into ${n} draft paragraphs`),
-      aiBtn: 'AI analysis', aiClose: 'Close', aiChanges: 'What changes', aiNotes: 'Notes',
+      aiBtn: 'AI analysis', aiClose: 'Close', sbHide: 'Hide sidebar', sbShow: 'Show sidebar', aiChanges: 'What changes', aiNotes: 'Notes',
       aiLoading: 'Loading the analysis…',
       aiMissing: 'There is no analysis for this article yet.',
       aiError: 'Could not load the analysis. Try again.',
@@ -93,7 +93,8 @@
     },
   };
   let lang = store.get('lang') === 'en' ? 'en' : 'hy';
-  let view = store.get('view') === 'split' ? 'split' : 'unified';
+  // 'viewMode' replaces the old 'view' key so earlier saved choices don't override the side-by-side default.
+  let view = store.get('viewMode') === 'unified' ? 'unified' : 'split';
   const T = (k, ...a) => { const v = I18N[lang][k]; return typeof v === 'function' ? v(...a) : v; };
   function fmtDate(iso) {
     if (!iso) return '—';
@@ -206,8 +207,10 @@
 
   const ICON = {
     fold: '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M5 6l3-3 3 3M5 10l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    chev: '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    note: '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3.5 2.5h6l3 3v8h-9z M9.5 2.5v3h3 M5.5 8.5h5 M5.5 11h3.5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/></svg>',
+    fold: '<svg class="i-fold" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4.5 2.5 8 6l3.5-3.5M4.5 13.5 8 10l3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    unfold: '<svg class="i-unfold" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4.5 5.5 8 2l3.5 3.5M4.5 10.5 8 14l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    eye: '<svg class="eye" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M1.5 8s2.4-4.25 6.5-4.25S14.5 8 14.5 8 12.1 12.25 8 12.25 1.5 8 1.5 8Z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><circle cx="8" cy="8" r="2" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>',
+    note: '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M8 2.25v2.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="2" r="0.9" fill="currentColor"/><rect x="2.75" y="4.5" width="10.5" height="8.5" rx="2.25" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="6" cy="8.25" r="1" fill="currentColor"/><circle cx="10" cy="8.25" r="1" fill="currentColor"/><path d="M6.25 10.85h3.5M1.25 7.5v2.5M14.75 7.5v2.5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>',
   };
   // A merge or split is labelled in words, so the bracket beside it explains itself.
   function grpCaption(op, cols) {
@@ -225,8 +228,8 @@
     const items = e.status === 'U' ? [{ fold: e.ops }] : foldPlan(e.ops);
     const rows = view === 'split' ? splitRows(items) : unifiedRows(items);
     const cols = view === 'split'
-      ? '<colgroup><col style="width:46px"><col style="width:20px"><col><col style="width:46px"><col style="width:20px"><col></colgroup>'
-      : '<colgroup><col style="width:46px"><col style="width:46px"><col style="width:20px"><col></colgroup>';
+      ? '<colgroup><col style="width:32px"><col style="width:16px"><col><col style="width:32px"><col style="width:16px"><col></colgroup>'
+      : '<colgroup><col style="width:32px"><col style="width:32px"><col style="width:16px"><col></colgroup>';
     return `<table class="diff ${view}">${cols}<tbody>${rows}</tbody></table>`;
   }
 
@@ -250,15 +253,6 @@
     return h + '</span>';
   }
 
-  function fromLabel(e) {
-    if (e.kind === 'removed') {
-      const near = e.near ? ` · <span title="${esc(T('nearHint'))}">${esc(T('nearArt', e.near))} <a href="#p-${esc(e.near)}">${esc(e.near)}</a></span>` : '';
-      return `<span class="from">${esc(T('current'))}${near}</span>`;
-    }
-    if (!e.from.length) return '';
-    const list = e.from.map((f) => `${f.n}${f.manual ? '*' : f.merged || f.weak ? '~' : ''}${f.part ? ' ' + T('partMark') : ''}`).join(', ');
-    return `<span class="from" title="${esc(T('legend'))}"><span class="arrow" aria-hidden="true">←</span>${esc(T('fromArt'))} ${esc(list)}</span>`;
-  }
 
   // ---------- app state & UI ----------
   let DATA = null, ENTRIES = [];
@@ -288,7 +282,7 @@
 
   function chapterTitle(n) {
     const c = DATA.proposed.chapters.find((x) => x.n === n);
-    return c ? `${T('chapter')} ${n}. ${c.t}` : '';
+    return c ? `${T('chapter')} ${n}. ${chapterName(c)}` : '';
   }
 
   function renderTree() {
@@ -306,17 +300,15 @@
   function renderFiles() {
     const list = visibleEntries();
     foldStore = [];
-    resetToggleAll();
     if (observer) observer.disconnect();
     $('#files').innerHTML = list.map((e) => `
       <section class="file ${viewed.has(e.id) ? 'collapsed' : ''}" id="${e.id}" data-id="${e.id}" aria-labelledby="h-${e.id}">
         <div class="fhead">
-          <button type="button" class="caret" aria-label="${esc(T('toggleArticle'))}" aria-expanded="${!viewed.has(e.id)}" aria-controls="b-${e.id}">${ICON.chev}</button>
-          <span class="badge b-${e.status}" title="${esc(T(e.status))}">${e.status}</span>
-          <h2 class="fname" id="h-${e.id}"><span class="ftitle">${esc(e.label)}</span>${fromLabel(e)}</h2>
-          <span class="counts"><span class="plus">+${e.add}</span><span class="minus">−${e.del}</span>${blocks(e.add, e.del)}</span>
+          <h2 class="fname" id="h-${e.id}"><span class="ftitle">${esc(e.label)}</span></h2>
+          <span class="counts"><span class="badge b-${e.status}" title="${esc(T(e.status))}">${e.status}</span><span class="plus">+${e.add}</span><span class="minus">−${e.del}</span>${blocks(e.add, e.del)}</span>
           ${e.status === 'U' ? '' : `<button type="button" class="aibtn" data-ai="${e.id}" aria-haspopup="dialog" aria-label="${esc(T('aiBtn') + ': ' + e.label)}">${ICON.note}<span>${esc(T('aiBtn'))}</span></button>`}
-          <label class="viewedbox"><input type="checkbox" class="vchk" ${viewed.has(e.id) ? 'checked' : ''}> ${esc(T('viewed'))}</label>
+          <label class="viewedbox"><input type="checkbox" class="vchk" ${viewed.has(e.id) ? 'checked' : ''}>${ICON.eye}${esc(T('viewed'))}</label>
+          <button type="button" class="caret" aria-label="${esc(T('toggleArticle'))}" aria-expanded="${!viewed.has(e.id)}" aria-controls="b-${e.id}">${ICON.fold}${ICON.unfold}</button>
         </div>
         <div class="fbody" id="b-${e.id}" data-pending="1"></div>
       </section>`).join('') || emptyNote();
@@ -339,12 +331,49 @@
   }
   let fillUpTo = () => {};
 
+  // Mark the article header that is currently stuck to the top (it alone gets the edge and gap mask).
+  function trackStuck() {
+    let raf = 0, last = null;
+    const run = () => {
+      raf = 0;
+      const line = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--stick-top')) || 0;
+      let hit = null;
+      for (const s of document.querySelectorAll('.file:not(.collapsed)')) {
+        const r = s.getBoundingClientRect();
+        if (r.top < line - 0.5 && r.bottom > line) { hit = s.querySelector('.fhead'); break; }
+        if (r.top > line) break;
+      }
+      if (hit !== last) { if (last) last.classList.remove('stuck'); if (hit) hit.classList.add('stuck'); last = hit; }
+    };
+    const kick = () => { if (!raf) raf = requestAnimationFrame(run); };
+    window.addEventListener('scroll', kick, { passive: true });
+    window.addEventListener('resize', kick);
+    new MutationObserver(() => { last = null; kick(); }).observe($('#files'), { childList: true });
+    kick();
+  }
+
+  // Re-render without losing your place: the article you are reading stays at the same spot on screen.
+  function keepPlace(render) {
+    const line = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--stick-top')) || 0;
+    const a = [...document.querySelectorAll('.file')].find((s) => s.getBoundingClientRect().bottom > line + 60);
+    const id = a && a.id, top = a ? a.getBoundingClientRect().top : 0;
+    const into = a && top < line ? (line - top) / Math.max(1, a.offsetHeight) : 0; // how far you had read into it
+    render();
+    const b = id && document.getElementById(id);
+    if (!b) return;
+    fillUpTo(b.nextElementSibling || b); // lay out everything above it, so nothing shifts afterwards
+    const r = b.getBoundingClientRect();
+    const delta = into ? r.top + into * b.offsetHeight - line : r.top - top;
+    window.scrollTo({ top: window.scrollY + delta, behavior: 'instant' });
+  }
+
   function applyI18n() {
     document.documentElement.lang = lang;
     document.querySelectorAll('[data-i18n]').forEach((el) => { el.textContent = T(el.dataset.i18n); });
     document.querySelectorAll('[data-i18n-html]').forEach((el) => { el.innerHTML = T(el.dataset.i18nHtml); });
     document.querySelectorAll('[data-i18n-ph]').forEach((el) => { el.placeholder = T(el.dataset.i18nPh); });
-    document.querySelectorAll('[data-i18n-label]').forEach((el) => { el.setAttribute('aria-label', T(el.dataset.i18nLabel)); });
+    document.querySelectorAll('[data-i18n-label]').forEach((el) => { el.setAttribute('aria-label', T(el.dataset.i18nLabel)); if (el.hasAttribute('title')) el.title = T(el.dataset.i18nLabel); });
+    if ($('#sbToggle')) setSidebar(!document.body.classList.contains('sb-closed'));
     $('#lang').textContent = lang === 'hy' ? 'EN' : 'ՀՅ';
     $('#lang').title = T('langName');
     $('#lang').lang = lang === 'hy' ? 'en' : 'hy';
@@ -357,50 +386,44 @@
   let CHANGES = null;
   const L2 = (o) => (o && (o[lang] ?? o.en)) || '';
 
+  // Master–detail: the changes are listed on the left; the selected one is explained on the right.
+  let ovSel = null;
   function renderOverview() {
-    const box = $('#overview');
-    if (!CHANGES || !DATA) { box.hidden = true; return; }
-    box.hidden = false;
-    const chOf = (n) => (n === 'preamble' ? 0 : (DATA.proposed.articles.find((a) => a.n === n) || {}).ch);
-    const artLabel = (n) => (n === 'preamble' ? T('preamble') : n);
-    // Each change is listed once, under the chapter of its main article; other chapters it touches get an "also here" line.
-    const home = new Map(), also = new Map();
-    const push = (m, k, v) => (m.get(k) || m.set(k, []).get(k)).push(v);
-    for (const it of CHANGES.pillars.flatMap((p) => p.items)) {
-      const main = chOf(it.link === 'preamble' ? 'preamble' : it.link.replace(/^p-/, ''));
-      push(home, main, it);
-      for (const c of new Set(it.draft.map(chOf))) if (c !== main) push(also, c, it);
-    }
-    const open = new Set([...document.querySelectorAll('.toc-chg details[open]')].map((d) => d.parentElement.id));
-    const change = (it) => {
-      const t = it[lang] || it.en;
-      const facts = (it.facts || []).map((f) => `<li><span class="fact-l">${esc(L2(f.label))}</span><span class="fact-v"><s>${esc(L2(f)[0])}</s><span class="fact-arrow" aria-hidden="true">→</span><b>${esc(L2(f)[1])}</b></span></li>`).join('');
-      const cur = it.current.length ? `${esc(T('currentArts'))} ${it.current.map(artLabel).map(esc).join(', ')}` : esc(T('newArt'));
-      return `<li class="toc-chg" id="chg-${esc(it.id)}"><details>
-        <summary><span class="toc-dot" aria-hidden="true"></span><span class="toc-chg-t">${esc(t.title)}</span><span class="toc-chev" aria-hidden="true"></span></summary>
-        <div class="item-body">
-          ${facts ? `<ul class="facts">${facts}</ul>` : ''}
-          <p>${esc(t.text)}</p>
-          ${t.note ? `<p class="item-note"><b>${esc(T('keepInMind'))}.</b> ${esc(t.note)}</p>` : ''}
-          <p class="item-links"><a class="btn btn-link" href="#${esc(it.link)}">${esc(T('readDiff'))} <span aria-hidden="true">→</span></a>
-            <span class="item-refs">${esc(T('draftArt'))} ${it.draft.map(artLabel).map(esc).join(', ')} · ${cur}</span></p>
-        </div></details></li>`;
+    $('#ovOpen').hidden = !(CHANGES && DATA);
+    if (!CHANGES || !DATA) return;
+    const all = CHANGES.pillars.flatMap((g) => g.items);
+    if (!all.some((it) => it.id === ovSel)) ovSel = all[0] && all[0].id;
+    let num = 0;
+    const pick = (it) => {
+      const t = it[lang] || it.en; num += 1;
+      const where = it.draft.includes('preamble') ? T('preamble') : `${T('artShort')} ${it.draft.join(', ')}`;
+      return `<li class="ov-item" id="chg-${esc(it.id)}"><button type="button" class="ov-pick" data-chg="${esc(it.id)}" aria-controls="ovDetail" aria-current="${it.id === ovSel}">
+        <span class="ov-num">${num}</span><span class="ov-item-main"><span class="ov-item-t">${esc(t.title)}</span><span class="ov-where">${esc(where)}</span></span><span class="ov-arrow" aria-hidden="true"></span></button></li>`;
     };
-    const chapters = [{ n: 0, t: T('preamble') }, ...DATA.proposed.chapters.map((c) => ({ n: c.n, t: chapterName(c) }))];
-    const rows = chapters.map((c) => {
-      const mine = home.get(c.n) || [], others = also.get(c.n) || [];
-      const quiet = !mine.length && !others.length;
-      const count = c.n ? DATA.proposed.articles.filter((a) => a.ch === c.n).length : 0;
-      return `<li class="toc-ch${quiet ? ' quiet' : ''}">
-        <div class="toc-row"><span class="toc-n">${c.n || ''}</span><h3 class="toc-t">${esc(c.t)}</h3><span class="toc-arts">${c.n ? esc(T('arts', count)) : ''}</span>
-        ${quiet ? `<span class="toc-none">${esc(T('noMain'))}</span>` : ''}</div>
-        ${quiet ? '' : `<ul class="toc-changes">${mine.map(change).join('')}${others.map((it) => `<li class="toc-also"><span class="toc-dot" aria-hidden="true"></span><span>${esc(T('alsoHere'))} <a href="#chg-${esc(it.id)}" data-jump="${esc(it.id)}">${esc((it[lang] || it.en).title)}</a></span></li>`).join('')}</ul>`}
-      </li>`;
-    });
-    // Two fixed columns on wide screens (preamble–5, 6–12): opening a change only lengthens its own column.
-    const split = chapters.findIndex((c) => c.n === 6);
-    $('#tocList').innerHTML = `<ol class="toc-col">${rows.slice(0, split).join('')}</ol><ol class="toc-col" start="6">${rows.slice(split).join('')}</ol>`;
-    open.forEach((id) => { const d = document.querySelector(`#${CSS.escape(id)} details`); if (d) d.open = true; });
+    const list = CHANGES.pillars.map((g) => `<section class="ov-group">
+        <h3 class="ov-group-h">${esc(L2(g))}<span class="ov-group-n">${g.items.length}</span></h3>
+        <ol class="ov-items">${g.items.map(pick).join('')}</ol>
+      </section>`).join('');
+    $('#tocList').innerHTML = `<div class="ov-master" id="ovMaster"><div class="ov-list">${list}</div><div class="ov-detail" id="ovDetail" tabindex="-1"></div></div>`;
+    renderChange(ovSel);
+  }
+  function renderChange(id) {
+    const groups = CHANGES.pillars, all = groups.flatMap((g) => g.items);
+    const idx = all.findIndex((it) => it.id === id); if (idx < 0) return;
+    const it = all[idx], g = groups.find((x) => x.items.includes(it)), t = it[lang] || it.en;
+    const artLabel = (n) => (n === 'preamble' ? T('preamble') : n);
+    const facts = (it.facts || []).map((f) => `<li><span class="fact-l">${esc(L2(f.label))}</span><span class="fact-v"><s>${esc(L2(f)[0])}</s><span class="fact-arrow" aria-hidden="true">→</span><b>${esc(L2(f)[1])}</b></span></li>`).join('');
+    const cur = it.current.length ? `${esc(T('currentArts'))} ${it.current.map(artLabel).map(esc).join(', ')}` : esc(T('newArt'));
+    $('#ovDetail').innerHTML = `
+      <button type="button" class="ov-back" data-back><span aria-hidden="true">←</span> ${esc(T('ovBack'))}</button>
+      <p class="ov-d-kicker">${esc(L2(g))} · ${idx + 1}/${all.length}</p>
+      <h3 class="ov-d-title">${esc(t.title)}</h3>
+      ${facts ? `<ul class="facts">${facts}</ul>` : ''}
+      <p class="ov-d-text">${esc(t.text)}</p>
+      ${t.note ? `<p class="item-note"><b>${esc(T('keepInMind'))}.</b> ${esc(t.note)}</p>` : ''}
+      <p class="item-links"><a class="btn btn-link" href="#${esc(it.link)}">${esc(T('readDiff'))} <span aria-hidden="true">→</span></a>
+        <span class="item-refs">${esc(T('draftArt'))} ${it.draft.map(artLabel).map(esc).join(', ')} · ${cur}</span></p>`;
+    document.querySelectorAll('.ov-pick').forEach((b) => b.setAttribute('aria-current', String(b.dataset.chg === id)));
   }
   // Chapter names come in capitals in the source; show them in sentence case (ԵՎ → և).
   function chapterName(c) {
@@ -497,23 +520,35 @@
     document.querySelectorAll('.tree a').forEach((a) => { const on = a.dataset.id === id; a.classList.toggle('active', on); if (on) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current'); });
   }
 
-  let allCollapsed = false;
   function setCollapsed(sec, on) {
     sec.classList.toggle('collapsed', on);
     const c = sec.querySelector('.caret'); if (c) c.setAttribute('aria-expanded', String(!on));
   }
-  function resetToggleAll() { allCollapsed = false; $('#toggleAll').textContent = T('collapseAll'); }
+
+  function setSidebar(open) {
+    document.body.classList.toggle('sb-closed', !open);
+    const b = $('#sbToggle'), label = T(open ? 'sbHide' : 'sbShow');
+    // Collapsed: the toggle joins the header's button stack; expanded: it returns to the sidebar corner.
+    const home = open ? $('#sidebar') : $('#topbar .controls');
+    if (b.parentElement !== home) { if (open) home.prepend(b); else home.append(b); }
+    b.setAttribute('aria-expanded', String(open)); b.setAttribute('aria-label', label); b.title = label;
+  }
 
   function bind() {
-    document.querySelectorAll('[data-view]').forEach((b) => b.addEventListener('click', () => {
-      view = b.dataset.view; store.set('view', view); applyI18n(); renderFiles();
-    }));
-    $('#lang').addEventListener('click', () => { lang = lang === 'hy' ? 'en' : 'hy'; store.set('lang', lang); renderAll(); });
-    $('#toggleAll').addEventListener('click', () => {
-      allCollapsed = !allCollapsed;
-      document.querySelectorAll('.file').forEach((s) => setCollapsed(s, allCollapsed));
-      $('#toggleAll').textContent = T(allCollapsed ? 'expandAll' : 'collapseAll');
+    if (store.get('notice') === 'closed') $('#notice').hidden = true;
+    setSidebar(store.get('sidebar') !== 'closed');
+    $('#sbToggle').addEventListener('click', () => {
+      const open = document.body.classList.contains('sb-closed');
+      setSidebar(open); store.set('sidebar', open ? 'open' : 'closed');
     });
+    document.querySelectorAll('[data-view]').forEach((b) => b.addEventListener('click', () => {
+      if (b.dataset.view === view) return;
+      view = b.dataset.view; store.set('viewMode', view); applyI18n(); keepPlace(renderFiles);
+    }));
+    $('#noticeClose').addEventListener('click', () => { $('#notice').hidden = true; store.set('notice', 'closed'); });
+    $('#lang').addEventListener('click', () => { lang = lang === 'hy' ? 'en' : 'hy'; store.set('lang', lang); renderAll(); });
+    $('#collapseAll').addEventListener('click', () => document.querySelectorAll('.file').forEach((s) => setCollapsed(s, true)));
+    $('#expandAll').addEventListener('click', () => document.querySelectorAll('.file').forEach((s) => setCollapsed(s, false)));
     let t;
     $('#filter').addEventListener('input', (ev) => {
       clearTimeout(t);
@@ -535,14 +570,6 @@
       requestAnimationFrame(() => root.classList.remove('no-trans'));
     });
     $('#sidebar').addEventListener('click', (ev) => { if (ev.target.closest('[data-clear]')) clearFilters(); });
-    $('#tocList').addEventListener('click', (ev) => {
-      const j = ev.target.closest('[data-jump]'); if (!j) return;
-      ev.preventDefault();
-      const li = document.getElementById('chg-' + j.dataset.jump);
-      li.querySelector('details').open = true;
-      li.scrollIntoView({ block: 'center' });
-      li.querySelector('summary').focus({ preventScroll: true });
-    });
     $('#files').addEventListener('click', (ev) => {
       if (ev.target.closest('[data-clear]')) { clearFilters(); return; }
       const ai = ev.target.closest('.aibtn');
@@ -579,7 +606,7 @@
     b.setAttribute('aria-label', T(light ? 'themeDark' : 'themeLight'));
     b.title = T(light ? 'themeDark' : 'themeLight');
     const meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.content = light ? '#f7f6f3' : '#0c0e12';
+    if (meta) meta.content = light ? '#f4f4f4' : '#000000';
   }
 
   // Sticky card headers and anchor jumps sit below the top bar, whatever height it wraps to.
@@ -604,14 +631,32 @@
   }
 
   let OVERRIDES = {};
+  // The main-changes summary lives in a modal opened from the header button.
   function trackOverview() {
-    const ov = $('#overview');
-    if (store.get('overviewClosed') === '1') ov.open = false;
-    ov.addEventListener('toggle', () => store.set('overviewClosed', ov.open ? '0' : '1'));
+    const dlg = $('#overview'), btn = $('#ovOpen');
+    btn.addEventListener('click', () => { if (!dlg.open) dlg.showModal(); });
+    $('#ovClose').addEventListener('click', () => dlg.close());
+    dlg.addEventListener('click', (ev) => {
+      if (ev.target === dlg) { dlg.close(); return; }
+      if (ev.target.closest('a[href^="#"]')) { dlg.close(); return; } // "Read the diff" jumps to the article
+      const b = ev.target.closest('.ov-pick');
+      if (b) {
+        ovSel = b.dataset.chg; renderChange(ovSel);
+        const d = $('#ovDetail'); d.scrollTop = 0; $('#ovMaster').classList.add('show-detail');
+        if (getComputedStyle($('.ov-back')).display !== 'none') d.focus({ preventScroll: true });
+        return;
+      }
+      if (ev.target.closest('[data-back]')) {
+        $('#ovMaster').classList.remove('show-detail');
+        const back = document.querySelector(`.ov-pick[data-chg="${CSS.escape(ovSel)}"]`); if (back) back.focus();
+      }
+    });
+    dlg.addEventListener('close', () => { if (!location.hash) btn.focus({ preventScroll: true }); });
   }
 
   async function main() {
     trackTopbar();
+    trackStuck();
     trackOverview();
     trackToc();
     applyI18n();
